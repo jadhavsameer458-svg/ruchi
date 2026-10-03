@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)file:///C:/bday.html/index.html#gallery -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#ffc1dc;
+  color:#fff;
+  overflow-x:hidden
+}
+
+section{
+  min-height:100vh;
+  position:relative
+}
+
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:40px 20px;
+  background:linear-gradient(135deg,#ffd2df,#f3a7cb 48%,#b38be8);
+  overflow:hidden
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:-20%;
+  background:
+    radial-gradient(circle at 20% 25%,rgba(255,255,255,.45) 0 5px,transparent 6px),
+    radial-gradient(circle at 75% 65%,rgba(255,255,255,.35) 0 4px,transparent 5px);
+  background-size:120px 120px,160px 160px;
+  animation:drift 14s linear infinite
+}
+
+@keyframes drift{
+  to{transform:translate3d(40px,-30px,0)}
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:950px
+}
+
+.hero h1{
+  font-size:clamp(42px,7vw,86px);
+  color:#e81f69;
+  text-shadow:0 4px 12px rgba(255,255,255,.5);
+  margin-bottom:15px
+}
+
+.hero p{
+  font-size:clamp(18px,2.4vw,28px);
+  margin-bottom:30px
+}
+
+.cake{
+  font-size:85px;
+  animation:bounce 2s ease-in-out infinite;
+  margin:15px 0 30px
+}
+
+@keyframes bounce{
+  50%{transform:translateY(-15px) rotate(-3deg)}
+}
+
+.buttons{
+  display:flex;
+  gap:16px;
+  justify-content:center;
+  flex-wrap:wrap
+}
+
+.btn{
+  border:0;
+  text-decoration:none;
+  color:white;
+  background:linear-gradient(135deg,#ef3e86,#d92970);
+  padding:15px 28px;
+  border-radius:32px;
+  font-weight:700;
+  font-size:16px;
+  box-shadow:0 10px 25px rgba(137,26,91,.25);
+  cursor:pointer;
+  transition:.25s
+}
+
+.btn:hover{
+  transform:translateY(-4px) scale(1.03)
+}
+
+.floating{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:50;
+  overflow:hidden
+}
+
+.float{
+  position:absolute;
+  bottom:-50px;
+  animation:up linear forwards;
+  font-size:22px
+}
+
+@keyframes up{
+  to{
+    transform:translateY(-115vh) rotate(360deg);
+    opacity:0
+  }
+}
+
+.gallery{
+  background:linear-gradient(135deg,#ffb6d6,#ffcce5);
+  padding:70px 6% 120px;
+  color:#222
+}
+
+.title{
+  text-align:center;
+  margin-bottom:45px
+}
+
+.title h2{
+  font-size:clamp(35px,5vw,58px);
+  color:white;
+  text-shadow:0 3px 10px rgba(140,40,100,.25)
+}
+
+.title p{
+  margin-top:10px;
+  color:#fff;
+  font-size:18px
+}
+
+.grid{
+  max-width:1100px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.card{
+  background:rgba(255,225,239,.88);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 28px rgba(120,40,100,.18);
+  transition:.3s
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 35px rgba(120,40,100,.25)
+}
+
+.card img{
+  width:100%;
+  height:260px;
+  display:block;
+  object-fit:cover
+}
+
+.card-body{
+  text-align:center;
+  padding:14px 12px 17px
+}
+
+.card h3{
+  font-size:18px;
+  color:#333
+}
+
+.card p{
+  margin-top:5px;
+  color:#9b5479;
+  font-size:14px
+}
+
+.message{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:40px 20px;
+  background:linear-gradient(135deg,#6c5bd4,#9c5fc9);
+  overflow:hidden
+}
+
+.message-box{
+  width:min(760px,94%);
+  padding:38px;
+  border-radius:25px;
+  background:rgba(255,255,255,.13);
+  backdrop-filter:blur(14px);
+  box-shadow:0 20px 60px rgba(20,10,70,.3);
+  text-align:center
+}
+
+.message-box h2{
+  font-size:32px;
+  margin-bottom:22px
+}
+
+.letter{
+  background:rgba(45,28,100,.35);
+  padding:28px;
+  border-radius:18px;
+  text-align:left;
+  line-height:1.8;
+  font-size:17px;
+  margin-bottom:25px
+}
+
+.surprise{
+  background:linear-gradient(135deg,#ffb4d4,#d99cff);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:30px
+}
+
+.surprise-box{
+  max-width:700px
+}
+
+.surprise h2{
+  font-size:48px;
+  margin-bottom:15px
+}
+
+.surprise p{
+  font-size:19px;
+  line-height:1.7;
+  margin-bottom:25px
+}
+
+footer{
+  background:#513d99;
+  text-align:center;
+  padding:22px;
+  font-size:14px
+}
+
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(10,5,25,.75);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:100;
+  padding:20px
+}
+
+.modal.show{
+  display:flex
+}
+
+.modal-card{
+  background:linear-gradient(135deg,#fff,#ffd5e7);
+  color:#722050;
+  border-radius:24px;
+  padding:35px;
+  max-width:520px;
+  text-align:center;
+  box-shadow:0 25px 80px rgba(0,0,0,.4)
+}
+
+.modal-card h2{
+  font-size:32px;
+  margin-bottom:12px
+}
+
+.modal-card p{
+  line-height:1.7;
+  margin-bottom:20px
+}
+
+.close{
+  background:#df367b;
+  border:0;
+  color:white;
+  padding:11px 25px;
+  border-radius:25px;
+  font-weight:bold;
+  cursor:pointer
+}
+
+@media(max-width:800px){
+  .grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+
+  .card img{
+    height:300px
+  }
+}
+
+@media(max-width:520px){
+  .grid{
+    grid-template-columns:1fr
+  }
+
+  .card img{
+    height:420px
+  }
+
+  .message-box{
+    padding:22px
+  }
+
+  .letter{
+    padding:20px;
+    font-size:16px
+  }
+
+  .hero h1{
+    font-size:43px
+  }
+
+  .surprise h2{
+    font-size:36px
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="floating" id="floating"><span class="float" style="left: 20.0023%; font-size: 24.2142px; animation-duration: 6.89368s; opacity: 0.535047;">💕</span><span class="float" style="left: 89.2107%; font-size: 16.1921px; animation-duration: 10.8075s; opacity: 0.567571;">✨</span><span class="float" style="left: 87.6883%; font-size: 18.1915px; animation-duration: 9.7334s; opacity: 0.667906;">🌸</span><span class="float" style="left: 50.9363%; font-size: 19.3919px; animation-duration: 9.45219s; opacity: 0.502181;">💗</span><span class="float" style="left: 20.0836%; font-size: 16.8757px; animation-duration: 9.57498s; opacity: 0.796048;">🌸</span><span class="float" style="left: 80.3538%; font-size: 15.8594px; animation-duration: 7.51324s; opacity: 0.521377;">🌸</span><span class="float" style="left: 20.1462%; font-size: 26.5189px; animation-duration: 9.28493s; opacity: 0.655825;">⭐</span><span class="float" style="left: 32.1051%; font-size: 19.1721px; animation-duration: 10.2466s; opacity: 0.697043;">🎈</span><span class="float" style="left: 49.3094%; font-size: 21.7311px; animation-duration: 7.30325s; opacity: 0.944041;">❤️</span><span class="float" style="left: 85.2091%; font-size: 26.5382px; animation-duration: 10.6057s; opacity: 0.834228;">⭐</span><span class="float" style="left: 94.0646%; font-size: 14.9272px; animation-duration: 8.36553s; opacity: 0.682548;">❤️</span><span class="float" style="left: 56.226%; font-size: 26.0355px; animation-duration: 8.03482s; opacity: 0.905041;">💗</span><span class="float" style="left: 33.0698%; font-size: 31.7836px; animation-duration: 7.06365s; opacity: 0.812616;">🌸</span><span class="float" style="left: 23.0349%; font-size: 28.4853px; animation-duration: 7.63871s; opacity: 0.704261;">✨</span><span class="float" style="left: 39.0626%; font-size: 31.8209px; animation-duration: 10.3692s; opacity: 0.8865;">⭐</span><span class="float" style="left: 17.6101%; font-size: 19.9627px; animation-duration: 8.03827s; opacity: 0.943581;">💕</span><span class="float" style="left: 14.5363%; font-size: 29.7037px; animation-duration: 5.26909s; opacity: 0.826112;">💗</span><span class="float" style="left: 96.0265%; font-size: 29.6655px; animation-duration: 7.699s; opacity: 0.954817;">🌸</span><span class="float" style="left: 51.0446%; font-size: 25.1912px; animation-duration: 5.21736s; opacity: 0.675093;">⭐</span><span class="float" style="left: 18.0908%; font-size: 17.4403px; animation-duration: 9.25599s; opacity: 0.694143;">🌸</span><span class="float" style="left: 82.3054%; font-size: 21.2135px; animation-duration: 9.11531s; opacity: 0.968029;">✨</span><span class="float" style="left: 25.2123%; font-size: 23.0671px; animation-duration: 10.7988s; opacity: 0.551658;">❤️</span><span class="float" style="left: 64.8349%; font-size: 23.0897px; animation-duration: 5.10004s; opacity: 0.544689;">🎈</span><span class="float" style="left: 69.5642%; font-size: 18.0055px; animation-duration: 5.48406s; opacity: 0.719156;">🎈</span><span class="float" style="left: 43.5961%; font-size: 17.6699px; animation-duration: 7.61965s; opacity: 0.55398;">🌸</span><span class="float" style="left: 65.2377%; font-size: 22.5473px; animation-duration: 9.91577s; opacity: 0.874849;">⭐</span></div>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+
+    <h1>🎉 HAPPY BIRTHDAY MY RUCHIIIIIII! 🎉</h1>
+
+    <p>Let's celebrate your special day ❤️</p>
+
+    <div class="cake">🎂</div>
+
+    <div class="buttons">
+
+      <a class="btn" href="file:///C:/bday.html/index.html#gallery">
+        📸 View Gallery
+      </a>
+
+      <a class="btn" href="file:///C:/bday.html/index.html#message">
+        💌 Sweet Message
+      </a>
+
+      <button class="btn" onclick="openSurprise()">
+        🎁 Special Surprise
+      </button>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="gallery" id="gallery">
+
+  <div class="title">
+    <h2>📸 Memory Gallery 📸</h2>
+    <p>Beautiful moments captured forever!</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 10.34.16 AM.jpeg" alt="Memory 1">
+      <div class="card-body">
+        <h3>Beautiful You ❤️</h3>
+        <p>honestly don’t know how you manage to look this beautiful every single time, but seeing you in a 
+            saree just makes me fall for you all over again.
+             You look absolutely breathtaking, my beautiful girl. ❤️🥹✨</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 10.42.13 AM.jpeg" alt="Memory 2">
+      <div class="card-body">
+        <h3>That Smile 🌸</h3>
+        <p>One of my favourite memories.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 10.46.50 AM.jpeg" alt="Memory 3">
+      <div class="card-body">
+        <h3>tht sharp jaw 😋</h3>
+        <p>“Btw, yMY Jaw is sharper than U 😁”</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 1.10.59 PM.jpeg" alt="Memory 4">
+      <div class="card-body">
+        <h3>Little Details 😁</h3>
+        <p>thanks me later 😁”</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 10.51.32 AM.jpeg" alt="Memory 5">
+      <div class="card-body">
+        <h3>Us 🤍</h3>
+        <p>"Us" - not just you, not just me, but always No matter how many little fights,
+
+misunderstandings, ups and downs come our way, I still want us to choose each other, understand each other, 
+and grow together. ❤😭❤🧿✨I don't need a perfect relationship; I just want something real, where we both stay,
+ communicate, support each other and never stop trying.🧿✨ Because at the end of the day,
+ having you beside me is what makes everything feel a little more special❤😭❤🧿✨.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 10.08.51 AM.jpeg" alt="Memory 6">
+      <div class="card-body">
+        <h3>Forever Moments ✨</h3>
+        <p>Some moments are just moments, but some become memories that we wish we could keep forever.
+             And every moment with you feels like one of those. 🥹❤️ From our stupid little conversations and endless
+              laughs to the small fights, random pictures, hugs, and all the memories we keep creating together — 
+              I want to remember every single one. I don’t know what the future holds, but I know that 
+              I want to keep making these beautiful moments with you, again and again. Because someday, 
+            when we look back, I want us to smile and say, “We really had something special.” ❤️🫶🏻♾️.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 11.03.30 AM.jpeg" alt="Memory 7">
+      <div class="card-body">
+        <h3>🥹</h3>
+        <p>A memory I never want to forget,no need to explain it.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 11.11.51 AM.jpeg" alt="Memory 8">
+      <div class="card-body">
+        <h3>Close To You 💗</h3>
+        <p>Some moments need no words.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 11.05.36 AM.jpeg" alt="Memory 9">
+      <div class="card-body">
+        <h3>Always Together 🌙</h3>
+        <p>Another beautiful memory.</p>
+      </div>
+    </article>
+
+    <article class="card">
+      <img src="./Happy Birthday ❤️ mob_files/WhatsApp Image 2026-10-03 at 1.22.32 PM.jpeg" alt="Memory 10">
+      <div class="card-body">
+        <h3>My Favourite Person ❤️</h3>
+        <p>And many more memories to come.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+
+<section class="message" id="message">
+
+  <div class="message-box">
+
+    <h2>💗 A Special Birthday Message 💗</h2>
+
+    <div class="letter">
+
+      <p>
+        happy birthday my ruchiiii!
+        Happy Birthday to someone who makes my world a little brighter. ❤️
+      </p>
+
+      <br>
+
+      <p>
+        I hope this new year of your life brings you happiness,
+        peace, success and countless beautiful moments.
+      </p>
+
+      <br>
+
+      <p>
+        Thank you for all the smiles, memories and little moments
+        that make everything feel special. No matter where life takes us,
+        I hope we keep creating memories together.
+        nd,
+        I know I’m not there with you to celebrate your birthday properly, but I’ll come very soon. Then we’ll enjoy a lot together. ❤️
+
+         From my side, I’ve done everything I could to make you happy
+         ,and I’ll always keep trying to make you smile.
+          Loveeeee youuuuuuu sooooo muchhh 😭❤️🫂 🫶
+      </p>
+
+      <br>
+
+      <p>
+        Keep smiling, keep shining and always remember how special you are. 🎂✨
+      </p>
+
+      <br>
+
+      <p>
+        <strong>Happy Birthday ,MRS.RUCHIKA ❤️</strong>
+      </p>
+
+    </div>
+
+    <div class="buttons">
+
+      <a class="btn" href="file:///C:/bday.html/index.html#home">
+        🏠 Home
+      </a>
+
+      <button class="btn" onclick="openSurprise()">
+        🎁 Surprise
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="surprise" id="surpriseSection">
+
+  <div class="surprise-box">
+
+    <h2>🎁 One More Thing...</h2>
+
+    <p>
+      This little website is made especially for you.
+      Every photo is a memory, and every memory is a reason to smile. ❤️
+    </p>
+
+    <button class="btn" onclick="openSurprise()">
+      💖 Open Your Surprise
+    </button>
+
+  </div>
+
+</section>
+
+
+<footer>
+  Made with ❤️ especially for you
+</footer>
+
+
+<div class="modal" id="modal">
+
+  <div class="modal-card">
+
+    <h2>🎉 Surprise! 🎉</h2>
+
+    <p>
+      Happy Birthday  my ruchiii !❤️
+      <br><br>
+      You are one of the most special person  in my life.
+      Here's to more smiles, more memories and more beautiful days together.
+      loveeeee youuuuu mu gurlllll! 🫶✨
+    </p>
+
+    <button class="close" onclick="closeSurprise()">
+      Close ❤️
+    </button>
+
+  </div>
+
+</div>
+
+
+<script>
+
+const box = document.getElementById('floating');
+
+const symbols = [
+  '❤️',
+  '💗',
+  '💕',
+  '✨',
+  '🌸',
+  '🎈',
+  '⭐'
+];
+
+function floatThing(){
+
+  const e = document.createElement('span');
+
+  e.className = 'float';
+
+  e.textContent =
+    symbols[Math.floor(Math.random() * symbols.length)];
+
+  e.style.left =
+    Math.random() * 100 + '%';
+
+  e.style.fontSize =
+    (14 + Math.random() * 18) + 'px';
+
+  e.style.animationDuration =
+    (5 + Math.random() * 6) + 's';
+
+  e.style.opacity =
+    .5 + Math.random() * .5;
+
+  box.appendChild(e);
+
+  setTimeout(() => e.remove(), 12000);
+}
+
+setInterval(floatThing, 450);
+
+
+function openSurprise(){
+
+  document
+    .getElementById('modal')
+    .classList.add('show');
+
+}
+
+
+function closeSurprise(){
+
+  document
+    .getElementById('modal')
+    .classList.remove('show');
+
+}
+
+
+document
+  .getElementById('modal')
+  .addEventListener('click', e => {
+
+    if(e.target.id === 'modal'){
+      closeSurprise();
+    }
+
+  });
+
+</script>
+
+
+</body></html>
